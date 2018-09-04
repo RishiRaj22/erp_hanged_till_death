@@ -2,6 +2,9 @@
 
 Tired of pressing hundreds of buttons like a baboon just for accessing your attendance. Just use this script to make life a bit less painful.
 
+Here is how it works
+![Demo](demo.gif)
+
 ## Installation
 * Download and setup chrome driver by going to http://chromedriver.chromium.org/getting-started
 * Download and setup python and pip
