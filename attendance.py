@@ -50,9 +50,9 @@ def run(tries):
 
 def printusage():
     print("Set variables in the configuration at the top of the file,",
-          "or pass arguments like:",
-          "python attendance.py <user-id> <password>",
-          sep='\n')
+          "\nor pass arguments like:",
+          "\npython attendance.py <user-id> <password>",
+          )
 
 
 def main():
