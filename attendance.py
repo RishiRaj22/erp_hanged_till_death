@@ -45,8 +45,51 @@ def run(tries):
     except Exception:
         print("Error. Retrying ")
         return run(tries - 1)
-    return "<table>" + table.get_attribute('innerHTML') + "</table>"
+    return style() + script() + "<table>" + table.get_attribute('innerHTML') + "</table>"
 
+def script():
+    return """<script>
+    window.addEventListener('load',function () {
+            var trs = [].slice.call( [].slice.call(document.getElementsByTagName('table'))[0].getElementsByTagName('tr'));
+            trs.forEach(function(tr,i) {
+                    if(i==0) return;
+                    if(i==1) {
+                        var tds = [].slice.call(tr.getElementsByTagName('td'));
+                        tds.forEach(function(td) {
+                                td.style = '';
+                        });
+                    }
+
+                    var td = [].slice.call(tr.getElementsByTagName('td'))[4];
+                    var percent = parseInt(td.innerText);
+                    tr.classList.add('result');
+                    if(percent > 75) {
+                        tr.classList.add('pass');
+                    }
+                    else if(percent >= 65) {
+                        tr.classList.add('medical');
+                    } else {
+                        tr.classList.add('fail');
+                    }
+                });
+            });
+    </script>""";
+
+def style():
+    return """<style>
+        .pass {
+            background-color: green;
+        }
+        .medical {
+            background-color: orange;
+        }
+        .fail {
+            background-color: red;
+        }
+        .result {
+            color: white;
+        }
+    </style>""";
 
 def printusage():
     print("Set variables in the configuration at the top of the file,",
