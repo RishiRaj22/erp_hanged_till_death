@@ -1,5 +1,5 @@
 # ERP Hanged till Death
-
+## A new and better online version is available on https://github.com/RishiRaj22/erp_web
 Tired of pressing hundreds of buttons like a baboon just for accessing your attendance. Just use this script to make life a bit less painful.
 
 Here is how it works
