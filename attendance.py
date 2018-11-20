@@ -63,7 +63,7 @@ def script():
                     var td = [].slice.call(tr.getElementsByTagName('td'))[4];
                     var percent = parseInt(td.innerText);
                     tr.classList.add('result');
-                    if(percent > 75) {
+                    if(percent >= 75) {
                         tr.classList.add('pass');
                     }
                     else if(percent >= 65) {
